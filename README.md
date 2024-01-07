@@ -1,4 +1,4 @@
-### Hi there 👋
+### Welcome to [my blog](https://SapientialM.github.io) 👋
 
 <!--
 **SapientialM/SapientialM** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
