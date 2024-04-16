@@ -3,7 +3,7 @@
 # --------------------------------------
 
 nav:
-  logo: /img/github.jpg # image
+  logo: https://avatars.githubusercontent.com/u/55795402?v=4 # image
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -45,7 +45,7 @@ favicon: /img/github.jpg
 
 # Avatar (頭像)
 avatar:
-  img: /img/github.jpg
+  img: https://avatars.githubusercontent.com/u/55795402?v=4
   effect: false
 
 # Disable all banner image

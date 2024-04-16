@@ -1,6 +1,6 @@
 ---
 title: 从agrinJPG到SapientialM
-date: 2024-04-15 16:43:10
+date: 2024-04-12 08:43:10
 tags: [新的开始]
 ---
 
@@ -25,4 +25,4 @@ SapientialM
 
 ---
 
-看出来了吗，上述其实是ChatGPT写的，不过带有我的描述和训练罢了，啊哈哈。
+From gpt

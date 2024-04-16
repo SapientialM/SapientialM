@@ -1,6 +1,6 @@
 navbar:
   blog_title: SapientialM's Blog
-  logo: /img/github.jpg
+  logo: https://avatars.githubusercontent.com/u/55795402?v=4
 dark_mode:
   enable: true
   default: auto
