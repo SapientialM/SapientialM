@@ -15,7 +15,7 @@ tags: [ML-notes,ML,notes]
 通常我们会对获取到的数据进行数据划分，也就是我们绪论提到的一些学术用语：
 
 <div align=center>
-<img src="/img/pics/2-1.png" />
+<img src="/images/ML-pics/2-1.png" />
 </div>
 
 - **训练集 Training Set**：用来训练模型或确定参数。
@@ -39,7 +39,7 @@ tags: [ML-notes,ML,notes]
 
 ### 1.4 <a name='1-4'>过拟合(overfitting) vs. 欠拟合(underfitting)</a>
 <div align=center>
-<img src="/img/pics/2-2.png" />
+<img src="/images/ML-pics/2-2.png" />
 </div>
 
 我们以叶子为例子，如图所示，过拟合的话，会认为树叶必须有锯齿，欠拟合的话，认为绿色都是树叶。所以误差过小或过大，都会与预期结果不符。
@@ -91,7 +91,7 @@ tags: [ML-notes,ML,notes]
 ####  2.1.1 <a name='2-1-1'>留出法</a>
 
 <div align=center>
-<img src="/img/pics/2-3.png" />
+<img src="/images/ML-pics/2-3.png" />
 </div>
 
 将数据集 D 划分为**两个互斥的集合**，一个作为训练集 S，一个作为测试集 T，满足 D=S∪T 且 S∩T=∅ ，常见的划分为：大约2/3-4/5的样本用作训练，剩下的用作测试。
@@ -108,7 +108,7 @@ tags: [ML-notes,ML,notes]
 ####  2.1.2 <a name='2-1-2'>交叉验证法</a>
 
 <div align=center>
-<img src="/img/pics/2-4.png" />
+<img src="/images/ML-pics/2-4.png" />
 </div>
 
 将数据集D**等分为k份相互不重叠的子集**，每次**取1份子集作为测试集，其余子集作为训练集**。重复k次，直至所有子集都作为测试集进行过一次实验评估，最后取平均值。我们也称之为 **k 折交叉认证**。
@@ -120,7 +120,7 @@ tags: [ML-notes,ML,notes]
 
 假设有m个样本，每次采一个作为测试集，采到的概率是1/m，采不到的概率是(1-1/m)，采m次还采不到，概率为 (1-1/m) 的m次方。
 <div align=center>
-<img src="/img/pics/2-5.png" />
+<img src="/images/ML-pics/2-5.png" />
 </div>
 那么我们可以计算得到，其实最终约有 36.8% 的样本是不在训练集中的。这种方法取出的测试样本在数据集D中比例一般在25%~36.8%之间。
 
@@ -131,19 +131,19 @@ tags: [ML-notes,ML,notes]
 
 比如 回归(regression) 任务常用**均方误差**衡量性能：
 <div align=center>
-<img src="/img/pics/2-6.png" />
+<img src="/images/ML-pics/2-6.png" />
 </div>
 
 #### 2.2.1 <a name='2-2-1'>错误率与精度</a>
 对于样例 D：
 - **错误率（error rate）**：被错误分类的样本在总样本中的比例。
 <div align=center>
-<img src="/img/pics/2-7.png" />
+<img src="/images/ML-pics/2-7.png" />
 </div>
 
 - **精度（accuracy）**：被正确分类的样本在总样本中的比例，即（1 – 错误率）
 <div align=center>
-<img src="/img/pics/2-8.png" />
+<img src="/images/ML-pics/2-8.png" />
 </div>
 
 > 西瓜为例，**错误率是**有多少比例的瓜被判别错误。若关心“挑出的西瓜中有多少比例是好瓜”，或者“所有好瓜中有多少比例被挑了出来”，错误率就不够用了，需要使用其他性能度量。
@@ -153,7 +153,7 @@ tags: [ML-notes,ML,notes]
 #### 2.2.2 <a name='2-2-2'>查全率、查准率</a>
 
 <div align=center>
-<img src="/img/pics/2-9.png" />
+<img src="/images/ML-pics/2-9.png" />
 </div>
 
 - 解释：
@@ -178,7 +178,7 @@ tags: [ML-notes,ML,notes]
     - **定义**：根据学习器的预测结果按正例可能性大小（与阈值之差）对样例进行排序，并逐个把样本作为正例计算P和R，得到很多个P和R，形成P-R图。
 
     <div align=center>
-    <img src="/img/pics/2-10.png" />
+    <img src="/images/ML-pics/2-10.png" />
     </div>
     
     - 一般来说，曲线下的面积是很难进行估算的，所以衍生出了 **“平衡点”（Break-Event Point，简称BEP）**，即当P=R时的取值，平衡点的取值越高，性能更优。
@@ -186,12 +186,12 @@ tags: [ML-notes,ML,notes]
 - **F-Measure**
     - 常用的是 **F1 度量**：(基于 P R 的调和平均值)
     <div align=center>
-    <img src="/img/pics/2-11.png" />
+    <img src="/images/ML-pics/2-11.png" />
     </div>
     
     - 然而有时候我们对查全率和查准率的要求有偏差，这个时候我们就需要修改它们的权重，所以又引入了**F<sub>β</sub> 度量**：（基于 P R 的加权平均值）
     <div align=center>
-    <img src="/img/pics/2-12.png" />
+    <img src="/images/ML-pics/2-12.png" />
     </div>
     
     > β > 1 时 R 查全率 有更大权重，β < 1 时 P 查准率 有更大权重。β = 1 时，则为 F1 度量。
@@ -204,7 +204,7 @@ tags: [ML-notes,ML,notes]
 - **微观**则是计算出混淆矩阵的平均TP、FP、TN、FN，接着进行计算P、R，进而求出F<sub>β</sub>或F<sub>1</sub>。
 
 <div align=center>
-<img src="/img/pics/2-13.png" />
+<img src="/images/ML-pics/2-13.png" />
 </div>
 
 #### <a name='r-a'>ROC 与 AOC</a>
@@ -221,10 +221,10 @@ tags: [ML-notes,ML,notes]
 > TPR = R ，TPR 和 FPR 可以看作 正例成功率 和 反例失败率，也就是 真正例TP占真正例的比例，假正例FP占真反例的比例。
 
 <div align=center>
-<img src="/img/pics/2-14.png" />
+<img src="/images/ML-pics/2-14.png" />
 </div>
 <div align=center>
-<img src="/img/pics/2-15.png" />
+<img src="/images/ML-pics/2-15.png" />
 </div>
 简单分析图像，可以得知：当FN=0时，TN也必须0（TPR = FPR = 1），反之也成立，我们可以画一个队列，试着使用不同的截断点（即阈值）去分割队列，来分析曲线的形状，（0,0）表示将所有的样本预测为负例，（1,1）则表示将所有的样本预测为正例，（0,1）表示正例全部出现在负例之前的理想情况，（1,0）则表示负例全部出现在正例之前的最差情况。
 <br>
@@ -235,7 +235,7 @@ tags: [ML-notes,ML,notes]
 
 > 其实就是绘制 最大阈值时 的点 和 最小阈值时 的点，及其每个样本作为阈值的 点，构成一个离散点集，得到近似ROC曲线。
 <div align=center>
-<img src="/img/pics/2-16.png" />
+<img src="/images/ML-pics/2-16.png" />
 </div>
 
 ##### 评估
@@ -246,13 +246,13 @@ tags: [ML-notes,ML,notes]
 所以就引出 ROC曲线下的面积 我们定义为**AUC（Area Uder ROC Curve）**，**不同于P-R的是，这里的AUC是可估算的**，即AOC曲线下每一个小矩形的面积之和。
 
 <div align=center>
-<img src="/img/pics/2-17.png" />
+<img src="/images/ML-pics/2-17.png" />
 </div>
 
 易知：AUC越大，证明排序的质量越好，AUC为1时，证明所有正例排在了负例的前面，AUC为0时，所有的负例排在了正例的前面，这两种情况其实都属于最理想的情况。（不过 AUC 为 0 肯定是 分类出问题了）
 
 <div align=center>
-<img src="/img/pics/2-18.png" />
+<img src="/images/ML-pics/2-18.png" />
 </div>
 
 #### 2.2.3 <a name='2-2-3'>代价敏感错误率与代价曲线</a>
@@ -261,12 +261,12 @@ tags: [ML-notes,ML,notes]
 所以以二分类为例，由此引入了“代价矩阵”（cost matrix）。
 
 <div align=center>
-<img src="/img/pics/2-19.png" />
+<img src="/images/ML-pics/2-19.png" />
 </div>
 
 在非均等错误代价下，我们希望的是最小化“总体代价”，这样“代价敏感”的错误率（2.5.1节介绍）为：
 <div align=center>
-<img src="/img/pics/2-20.png" />
+<img src="/images/ML-pics/2-20.png" />
 </div>
 同样对于ROC曲线，在非均等错误代价下，演变成了“代价曲线”，在这里就不介绍了。
 
@@ -291,7 +291,7 @@ tags: [ML-notes,ML,notes]
 - #### 2.3.1.1 <a name='2-3-1-1'>**两学习器比较**</a>
     - 交叉验证t 检验(基于成对t 检验)
     <div align=center>
-    <img src="/img/pics/2-21.png" />
+    <img src="/images/ML-pics/2-21.png" />
     </div>
 
     > k 折交叉验证中训练集、测试集会产生重叠，可以通过5次2折交叉验证，使用第一次的两对差值计算均值，使用全部的差值对（即10对）计算方差，可以有效的避免这个问题。
@@ -304,16 +304,16 @@ tags: [ML-notes,ML,notes]
 
         > 比如：以下是三个算法 ABC 在 四个数据集上的 序值。比如 D1 中，A 最好，B 其次，C 最差。
         <div align=center>
-        <img src="/img/pics/2-22.png" />
+        <img src="/images/ML-pics/2-22.png" />
         </div>
         
         > 若学习器的性能相同，则它们的平均序值应该相同，且第i个算法的平均序值ri服从正态分布N（（k+1）/2，（k+1）(k-1)/12），则有：
 
         <div align=center>
-        <img src="/img/pics/2-23.png" />
+        <img src="/images/ML-pics/2-23.png" />
         </div>
         <div align=center>
-        <img src="/img/pics/2-24.png" />
+        <img src="/images/ML-pics/2-24.png" />
         </div>
         * Nemenyi 后续检验(基于序值，进一步判断两两差别)
         
@@ -321,10 +321,10 @@ tags: [ML-notes,ML,notes]
         
         > Nemenyi检验计算出平均序值差别的临界值域，下表是常用的qa值，若两个算法的平均序值差超出了临界值域CD，则相应的置信度1-α拒绝“两个算法性能相同”的假设。
         <div align=center>
-        <img src="/img/pics/2-25.png" />
+        <img src="/images/ML-pics/2-25.png" />
         </div>
         <div align=center>
-        <img src="/img/pics/2-26.png" />
+        <img src="/images/ML-pics/2-26.png" />
         </div>
 
 ##  3 <a name='3'>偏差与方差</a>
@@ -332,7 +332,7 @@ tags: [ML-notes,ML,notes]
 
 这里我们就要提到**偏差与方差**。**偏差-方差分解**是解释学习器泛化性能的重要工具。在学习算法中，偏差指的是预测的期望值与真实值的偏差，方差则是每一次预测值与预测值得期望之间的差均方。实际上，偏差体现了学习器预测的准确度，而方差体现了学习器预测的稳定性。
 <div align=center>
-<img src="/img/pics/2-27.png" />
+<img src="/images/ML-pics/2-27.png" />
 </div>
 
 但是 一般而言，偏差与方差存在冲突，这就是常说的偏差-方差窘境（bias-variance dilamma）：
@@ -340,6 +340,6 @@ tags: [ML-notes,ML,notes]
 - 随着**训练程度加深**，学习器拟合能力逐渐增强，方差逐 渐主导了泛化错误率
 - **训练充足**后，学习器的拟合能力很强，方差主导了泛化错误率（过拟合）
 <div align=center>
-<img src="/img/pics/2-28.png" />
+<img src="/images/ML-pics/2-28.png" />
 </div>
 这也就是绪论所说的拟合的几个情况。

@@ -24,7 +24,7 @@ tags: [ML-notes,ML,notes]
 > 此例子纯属虚构，不代表广大女性同胞的择偶标准。如有雷同纯属巧合。
 我们就可以通过这段对话，画出一个决策树。
 <div align=center>
-<img src="/img/pics/4-2.png" />
+<img src="/images/ML-pics/4-2.png" />
 </div>
 
 ### 4.1.2 <a name='4.1.2'>决策树</a>
@@ -42,27 +42,27 @@ tags: [ML-notes,ML,notes]
 - ① 当前结点样本均属于同一类别，无需划分。（只有一种结果）
 > Example: 下一个要划分的属性为属性1，显然无论属性为何种，均为 P 类无需划分。
 > <div align=center>
-> <img src="/img/pics/4-3.png" />
+> <img src="/images/ML-pics/4-3.png" />
 > </div>
 - ② 当前属性集为空。 （没有下一个结点）
 > Example: 属性1(B)→属性2(A)→属性3(A) 走完该路径已经无属性往下分
 > <div align=center>
-> <img src="/img/pics/4-4.png" />
+> <img src="/images/ML-pics/4-4.png" />
 > </div>
 - ③ 所有样本在当前属性集上取值相同，无法划分。（每个结点只有一条分支）
 > Example: 属性1 的 B分支下，样本子集中所有样本属性值完全一样，再往下划分就没有意义了。
 > <div align=center>
-> <img src="/img/pics/4-5.png" />
+> <img src="/images/ML-pics/4-5.png" />
 > </div>
 - ④ 当前结点包含的样本集合为空，不能划分。
 > Example: 属性 1 → 属性 2 的分支下只有 A ，无其他子集。
 > <div align=center>
-> <img src="/img/pics/4-6.png" />
+> <img src="/images/ML-pics/4-6.png" />
 > </div>
 
 **伪代码：**
 <div align=center>
-<img src="/img/pics/4-7.png" />
+<img src="/images/ML-pics/4-7.png" />
 </div>
 
 ## 4.3 <a name='4.3'>决策树的核心</a>
@@ -70,7 +70,7 @@ tags: [ML-notes,ML,notes]
 
 比如我们举一个极端的例子：
 <div align=center>
-<img src="/img/pics/4-8.png" />
+<img src="/images/ML-pics/4-8.png" />
 </div>
 很显然，其实根据属性 3 就可以判断出 正负例 了。那加入其他的属性进行判断就显得多余了。
 
@@ -94,40 +94,40 @@ ID3 算法使用信息增益为准则来选择划分属性，“**信息熵**”
 #### 信息熵
 假定当前样本集合 D 中第k类样本所占比例为 p<sub>k</sub>，则样本集合D的信息熵定义为：
 <div align=center>
-<img src="/img/pics/4-9.png" />
+<img src="/images/ML-pics/4-9.png" />
 </div>
 
 > Ent(D)的值越小，则 D 的纯度越高
  
 假定离散属性 a 有 V 个可能的取值{a<sup>1</sup>,a<sup>2</sup>...,a<sup>V</sup>}。若使用 a 来对样本集 D 进行划分，那么会产生 V 个分支结点，其中 D<sup>v</sup> 表示第 v 个分支结点包含了 D 中所有在属性 a 上取值为 a<sup>v</sup>的样本数。然后呢，我们可以**根据上面的式子计算出 D<sup>v</sup> 的信息熵**，再考虑到不同分支结点包含的样本数的不同，我们还需要对**分支结点赋予权重 |D<sup>v</sup>|/|D|**，即**样本数越多的分支结点的影响越大**，所以就计算出用属性 a 对样本集 D 进行划分所得到的 **信息增益**:
 <div align=center>
-<img src="/img/pics/4-10.png" />
+<img src="/images/ML-pics/4-10.png" />
 </div>
 信息增益越大，表示使用该属性划分样本集D的效果越好，因此ID3算法在递归过程中，每次选择最大信息增益的属性作为当前的划分属性。也就是每次可以得到最佳划分属性。
 
 #### 例子
 <div align=center>
-<img src="/img/pics/4-11.png" />
+<img src="/images/ML-pics/4-11.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-12.png" />
+<img src="/images/ML-pics/4-12.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-13.png" />
+<img src="/images/ML-pics/4-13.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-14.png" />
+<img src="/images/ML-pics/4-14.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-15.png" />
+<img src="/images/ML-pics/4-15.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-16.png" />
+<img src="/images/ML-pics/4-16.png" />
 </div>
 
 ### 4.3.3 <a name='4.3.3'>C4.5 算法</a>
@@ -137,7 +137,7 @@ ID3 算法使用信息增益为准则来选择划分属性，“**信息熵**”
 
 >例如：在学生成绩分类中，考虑学号为一个属性，然而学号基本每个人都有，所以得到得纯度很高，但是对分类毫无用处
 > <div align=center>
-> <img src="/img/pics/4-17.png" />
+> <img src="/images/ML-pics/4-17.png" />
 > </div>
 
 因此又提出了 **C4.5算法** 通过 **“增益率”（gain ratio）** 来选择划分属性，来避免这个问题带来的困扰。
@@ -146,7 +146,7 @@ ID3 算法使用信息增益为准则来选择划分属性，“**信息熵**”
 
 首先使用ID3算法计算出**信息增益**高于平均水平的候选属性，接着C4.5计算这些候选属性的增益率，**增益率** Gain_ratio 定义为：
 <div align=center>
-<img src="/img/pics/4-18.png" />
+<img src="/images/ML-pics/4-18.png" />
 </div>
 
 我们称上图的 IV(a) 为属性 a 的 “固有值”。属性 a 的可能取值越多（V 越多），则 IV(a) 通常会越大。
@@ -157,7 +157,7 @@ C4.5 算法不是直接选择增益值最大的候选划分属性，而是类似
 
 CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分属性。采用与 Ent(D) 信息熵计算相同的符号p<sub>k</sub>，数据集 D 的纯度可以用 **基尼值** 来度量：
 <div align=center>
-<img src="/img/pics/4-19.png" />
+<img src="/images/ML-pics/4-19.png" />
 </div>
 直观的说，Gini(D) 反映了从数据集 D 中随机抽取两个样本，其类别标记不一致的概率。因此，Gini(D) 越小，则数据集 D 的纯度最高。
 <br>
@@ -165,7 +165,7 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 
 同样的,基尼值对应信息熵，CART 的**基尼指数**也对应信息增益：
 <div align=center>
-<img src="/img/pics/4-20.png" />
+<img src="/images/ML-pics/4-20.png" />
 </div>
 
 > Gini_index 和 Gain_ratio 计算过程一样。CART 和 ID3 算法的区别在于 Gini 和 Gain 的区别。一个是 p<sub>k</sub>log<sub>2</sub>p<sub>k</sub> 一个是 p<sub>k</sub>p<sub>k</sub>'
@@ -187,34 +187,34 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 ### 4.4.2 <a name='4.4.2'>性能度量</a>
 显然，问题就来了，我怎么知道更好呢？
 
-之前学的[模型评估](./模型评估与选择.md)就有用了，其实就是所谓的**性能度量**。之前讲过的 **验证集** 在这里也就有了用处。
+之前学的{% post_link ML-notes/pages/model-evaluation '2.模型评估与选择' %}就有用了，其实就是所谓的**性能度量**。之前讲过的 **验证集** 在这里也就有了用处。
 
 #### 例子
 书上是使用的留用法，预留一部分数据作为 验证集 来进行性能评估。先看西瓜数据集：
 <div align=center>
-<img src="/img/pics/4-21.png" />
+<img src="/images/ML-pics/4-21.png" />
 </div>
 
 我们随机将其划分为了两部分，一部分是训练集，一部分是验证集。我们通过**信息增益准则**可以进行属性划分选择，生成一个**未剪枝**的决策树：
 <div align=center>
-<img src="/img/pics/4-22.png" />
+<img src="/images/ML-pics/4-22.png" />
 </div>
 
 **开始了啊！**
 
 #### 预剪枝
 <div align=center>
-<img src="/img/pics/4-23.png" />
+<img src="/images/ML-pics/4-23.png" />
 </div>
 
 预剪枝，每次选定属性后，要进行一次评估。图 4.6 就是第一次评估。我首先默认，不作划分的话都是好瓜。对于 ① 脐部，划分前，经过**它所包含的验证集**进行验证，准确率 42.9%，划分后 71.4%，显然需要划分。然后同样的步骤，对于下一层，当然每次划分都需要经过 ① 脐部划分之后再进行，比较验证集精度来进行评估。
 
 #### 后剪枝
 <div align=center>
-<img src="/img/pics/4-22.png" />
+<img src="/images/ML-pics/4-22.png" />
 </div>
 <div align=center>
-<img src="/img/pics/4-24.png" />
+<img src="/images/ML-pics/4-24.png" />
 </div>
 
 后剪枝就直接对 4-2 的未剪枝的决策树进行操作。从纹理层，也就是 ⑥ 开始操作，我们将它剪去，默认分支结果为好瓜，使用**它所包含的验证集**的{1,2,3,14}测试，看模型精度是否会更好。后面的也是一样的了。
@@ -241,12 +241,12 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 - 处理流程：
 > * 首先将 α 的所有取值按升序排列，所有**相邻属性的均值作为候选划分点**（n-1个，n为α所有的取值数目）。比如一共五个属性值，则如下：
 > <div align=center>
-> <img src="/img/pics/line-1.png" />
+> <img src="/images/ML-pics/line-1.png" />
 > </div>
 > 
 > * 计算每一个划分点作为二分点后的信息增益。
 > <div align=center>
-> <img src="/img/pics/line-2.png" />
+> <img src="/images/ML-pics/line-2.png" />
 > </div>
 > 
 > * 选择最大信息增益的划分点作为最优划分点。
@@ -264,26 +264,26 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 #### 例子
 我们给出了含缺失值的西瓜数据集：
 <div align=center>
-<img src="/img/pics/4-25.png" />
+<img src="/images/ML-pics/4-25.png" />
 </div>
 
 
-假定为样本集 D 中的每一个样本 x 都赋予一个权重 w<sub>x</sub>，同时我们规定，样本集 D 中对于 属性 α 没有缺失值的集合为 <img src="/img/pics/D_.png" /> ，划分到达根节点中时的权重初始化为1，则定义：
+假定为样本集 D 中的每一个样本 x 都赋予一个权重 w<sub>x</sub>，同时我们规定，样本集 D 中对于 属性 α 没有缺失值的集合为 <img src="/images/ML-pics/D_.png" /> ，划分到达根节点中时的权重初始化为1，则定义：
 <div align=center>
-<img src="/img/pics/4-26.png" />
+<img src="/images/ML-pics/4-26.png" />
 </div>
 
 为了**解决问题 （1）**，我们通过在样本集 D 中选取在属性α上**没有缺失值的样本子集**，计算了在该样本子集上的信息增益，**该信息增益推广为等于样本子集占样本集的<u>比重</u>乘以无缺失样本子集划分后<u>信息增益</u>**。即：
 <div align=center>
-<img src="/img/pics/4-28.png" />
+<img src="/images/ML-pics/4-28.png" />
 </div>
 <div align=center>
-<img src="/img/pics/4-27.png" />
+<img src="/images/ML-pics/4-27.png" />
 </div>
 
 然后为了**解决问题（2）**，若该样本子集在属性α上的值**缺失**，则将该样本以不同的权重（即每个分支所含**无缺失样本比例**）划入到所有分支节点中。该样本在分支节点中的权重变为：
 <div align=center>
-<img src="/img/pics/4-29.png" />
+<img src="/images/ML-pics/4-29.png" />
 </div>
 
 > 也就是说，缺失值的话，会将该样本划入所有子结点，但是不是 以一个单位来划分，而是以权值划分。这是针对训练集的划分。
@@ -297,11 +297,11 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 
 但是只是轴平行划分，也就是下图右方那样，形成简单的平行于轴的划分边界。
 <div align=center>
-<img src="/img/pics/4-30.png" />
+<img src="/images/ML-pics/4-30.png" />
 </div>
 当学习任务所对应的分类边界很复杂时，需要非常多段划分才能获得较好的近似，单变量就不再适用：
 <div align=center>
-<img src="/img/pics/4-31.png" />
+<img src="/images/ML-pics/4-31.png" />
 </div>
 
 ### 4.6.2 <a name='4.6.2'>多变量决策树</a>
@@ -312,12 +312,12 @@ CART 是另一种决策树算法，使用 **“基尼指数”** 来选择划分
 例如“斜决策树” (oblique decision tree) 不是为每个非叶结点寻找最优划分属性，而是建立一个线性分类器。
 
 <div align=center>
-<img src="/img/pics/4-32.png" />
+<img src="/images/ML-pics/4-32.png" />
 </div>
 
 
 
 ## 4.7 <a name='4.7'>思考</a>
 <div align=center>
-<img src="/img/pics/4-33.png" />
+<img src="/images/ML-pics/4-33.png" />
 </div>

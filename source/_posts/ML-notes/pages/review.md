@@ -11,7 +11,7 @@ https://www.cnblogs.com/geo-will/p/10468253.html
 ## 要求1：可以按照自己的理解简述线性回归问题。
 > 回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系。线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。通过构建损失函数，来求解损失函数最小时的参数w和b。
 
-## 要求2：可以对简单数据进行计算（PPT中例题）。
+## 要求2：可以对简单数据进行计算。
 > 最小二乘法与梯度计算
 
 > 见网页
@@ -29,10 +29,10 @@ https://www.cnblogs.com/geo-will/p/10468356.html
 >
 > 线性回归模型帮助我们用最简单的线性方程实现了对数据的拟合，但只实现了回归而无法进行分类。因此LR就是在线性回归的基础上，构造的一种分类模型。LR 通过一个联系函数，将预测值转化为离散值从而进行分类。对数几率引入了一个对数几率函数（logistic function）,将预测值投影到 0-1 之间，从而将线性回归问题转化为二分类问题。
 
-> 跳转详解 [3.线性模型](./pages/线性模型)
+> 跳转详解 {% post_link ML-notes/pages/linear-model '3.线性模型' %}
 
 ## 要求2：掌握梯度下降法、牛顿法的基本原理和迭代公式。
-> 跳转详解 [3.线性模型](./pages/线性模型)
+> 跳转详解 {% post_link ML-notes/pages/linear-model '3.线性模型' %}
 
 
 ## 要求3：可以编程实现逻辑回归算法。
@@ -48,39 +48,39 @@ https://www.cnblogs.com/geo-will/p/9773621.html
 ## 要求2：可以利用ID3，C4.5 和 CART算法对数据进行分类。
 > ID3 使用信息熵 Ent(D) 得到信息增益 Gain(D,a)，衡量划分属性
 <div align=center>
-<img src="/img/pics/4-9.png" />
+<img src="/images/ML-pics/4-9.png" />
 </div>
 <div align=center>
-<img src="/img/pics/4-10.png" />
+<img src="/images/ML-pics/4-10.png" />
 </div>
 
 > C4.5 使用增益率 Gain_ratio(D,a)，衡量划分属性
 <div align=center>
-<img src="/img/pics/4-18.png" />
+<img src="/images/ML-pics/4-18.png" />
 </div>
 
 > CART 使用基尼值 Gini(D) 得到 基尼指数 Gini_index(D,a)，衡量划分属性 
 <div align=center>
-<img src="/img/pics/4-19.png" />
+<img src="/images/ML-pics/4-19.png" />
 </div>
 <div align=center>
-<img src="/img/pics/4-20.png" />
+<img src="/images/ML-pics/4-20.png" />
 </div>
 
-> 跳转详解 [4.决策树](./pages/决策树)
+> 跳转详解 {% post_link ML-notes/pages/decision-tree '4.决策树' %}
 
 ## 要求3：可以对生成的决策树进行剪枝处理。
 
-> 4.4 剪枝 跳转详解 [4.决策树](./pages/决策树)
+> 4.4 剪枝 跳转详解 {% post_link ML-notes/pages/decision-tree '4.决策树' %}
 
 > 预剪枝 与 后剪枝
 
 <div align=center>
-<img src="/img/pics/4-23.png" />
+<img src="/images/ML-pics/4-23.png" />
 </div>
 
 <div align=center>
-<img src="/img/pics/4-24.png" />
+<img src="/images/ML-pics/4-24.png" />
 </div>
 
 # 4. 感知机 Perceptron —— 神经网络的组成单元
@@ -97,21 +97,21 @@ https://www.cnblogs.com/geo-will/p/9773621.html
 
 > 多层感知机还有一个层在输出层到输入层之间叫隐含层，隐含层类似于输出层，接收上一层的输出，通过激活函数将值传入下层。
 <div align=center>
-<img src="/img/pics/5.3.png" />
+<img src="/images/ML-pics/5.3.png" />
 </div>
 
-## 要求2：可以利用感知机解决逻辑分类问题（PPT例子）。(不是很懂)
+## 要求2：可以利用感知机解决逻辑分类问题。(还不是很懂)
 <div align=center>
-<img src="/img/pics/ex5.1.png" />
+<img src="/images/ML-pics/ex5.1.png" />
 </div>
 <div align=center>
-<img src="/img/pics/ex5.2.png" />
+<img src="/images/ML-pics/ex5.2.png" />
 </div>
 <div align=center>
-<img src="/img/pics/ex5.3.png" />
+<img src="/images/ML-pics/ex5.3.png" />
 </div>
 <div align=center>
-<img src="/img/pics/ex5.4.png" />
+<img src="/images/ML-pics/ex5.4.png" />
 </div>
 
 # 5. 神经网络 Neural Networks
@@ -157,10 +157,10 @@ https://zhuanlan.zhihu.com/p/65487578?from_voters_page=true
 
 > 我们为每个样本引入一个松弛变量 ε，令 ε<sub>i</sub> > 0 ，且：
 <div align=center>
-<img src="/img/pics/L6.1.png" />
+<img src="/images/ML-pics/L6.1.png" />
 </div>
 <div align=center>
-<img src="/img/pics/P6.1.png" />
+<img src="/images/ML-pics/P6.1.png" />
 </div>
 
 > 和常规的 SVM 一样，软间隔只是多了个约束，SVM 和 软间隔SVM的对偶问题都有相同的目标函数。
@@ -186,7 +186,6 @@ https://blog.csdn.net/zhongkelee/article/details/44064401
 
 > 整个PCA过程貌似及其简单，就是求协方差的特征值和特征向量，然后做数据转换。
 
-> PPT07 21/59 页例子
 
 > 网页例子 （1 2 3 45）： https://blog.csdn.net/zhongkelee/article/details/44064401
 
@@ -237,13 +236,12 @@ https://www.cnblogs.com/pinard/p/6244265.html
 ## 要求2：可以简述LDA算法的流程。
 
 <div align=center>
-<img src="/img/pics/P8.1.png" />
+<img src="/images/ML-pics/P8.1.png" />
 </div>
 
 # 9. K-均值聚类 K-means Clustering
 https://www.cnblogs.com/pinard/p/6164214.html
 https://www.cnblogs.com/zhxuxu/p/9860654.html
-> 看 ppt 更有效果
 
 ## 要求1：可以按照自己的理解简述K-means算法。
 > K-Means算法的思想很简单，对于给定的样本集，按照样本之间的欧式距离大小，将样本集划分为K个簇。让簇内的点尽量紧密的连在一起，而让簇间的距离（簇中心的距离）尽量的大。
@@ -258,12 +256,12 @@ https://www.cnblogs.com/zhxuxu/p/9860654.html
 >   - （4）然后将每个站点（k）移动到其Voronoi单元的质心。
 >   - Lloyd’s的输入是一个连续的几何区域，而不是一组离散的点。
 <div align=center>
-<img src="/img/pics/P9.2.png" />
+<img src="/images/ML-pics/P9.2.png" />
 </div>
 
 > 而可以用Lloyd算法来启发式的求解 K-means
 <div align=center>
-<img src="/img/pics/P9.1.png" />
+<img src="/images/ML-pics/P9.1.png" />
 </div>
 
 >- 原K-Means算法过程：

@@ -26,7 +26,7 @@ tags: [ML-notes,ML,notes]
 
 当学到机器学习最容易问的就是 三个概念 之间的关系了：机器学习、深度学习、人工智能。其实关系如下图一样：
 <div align=center>
-<img src="/img/pics/1-1.png" />
+<img src="/images/ML-pics/1-1.png" />
 </div>
 
 - **机器学习**是人工智能的一个子领域，是**人工智能的核心**
@@ -36,7 +36,7 @@ tags: [ML-notes,ML,notes]
 由机器学习也延展出很多技术：
 
 <div align=center>
-<img src="/img/pics/1-2.png" />
+<img src="/images/ML-pics/1-2.png" />
 </div>
 
 ##  3. <a name='3'>TAEP</a>
@@ -75,7 +75,7 @@ tags: [ML-notes,ML,notes]
 它最早源自于**高尔顿和学生皮尔逊**发现的一个神奇的生物遗传现象：如果父母双亲都比较高一些，那么生出的子女身高会低于父母的平均身高；反之，如果父母双亲都比较矮一些，那么生出的子女身高要高于父母平均身高。同样体重也如此，它们总是会向一个标准数值回归。
 
 <div align=center>
-<img src="/img/pics/1-3.png" />
+<img src="/images/ML-pics/1-3.png" />
 </div>
 
 ### 4.2 <a name='4-2'>分类（Classification）与 聚类（Clustering）</a>
@@ -89,7 +89,7 @@ tags: [ML-notes,ML,notes]
 - 检测（行人、车辆、军事目标…….）
 
 <div align=center>
-<img src="/img/pics/1-4.png" />
+<img src="/images/ML-pics/1-4.png" />
 </div>
 
 **聚类**是给定一些无标签样本，将其分成由类似对象组成的多个类。
@@ -99,7 +99,7 @@ tags: [ML-notes,ML,notes]
 - 数据挖掘、数据恢复
 - 字典学习（视觉信息，文本）
 <div align=center>
-<img src="/img/pics/1-5.png" />
+<img src="/images/ML-pics/1-5.png" />
 </div>
 
 ### 4.3 <a name='4-3'>表征（Representation）</a>

@@ -22,7 +22,7 @@ tags: [ML-notes,ML,notes]
 - 然后来到细胞体的**前部分**，它负责计算总输入值（输入信号的**加权求和**，累积电平）
 - 然后到达**后部分**，**计算总输入值与神经元阈值的差值**，通过**激活函数（activation function）处理**，传递到下一层神经元。
 <div align=center>
-<img src="/img/pics/5.1.png" />
+<img src="/images/ML-pics/5.1.png" />
 </div>
 
 > - ① 𝒙<sub>𝒊</sub> 来自第𝑖个神经元的输入
@@ -32,7 +32,7 @@ tags: [ML-notes,ML,notes]
 
 和之前讲的线性模型的分类十分相似，**神经元模型最理想的激活函数**也是阶跃函数。即将神经元输入值与阈值的差值映射为输出值 1 或 0 ，0 表示抑制神经元而 1 表示激活神经元。但阶跃函数不连续，不光滑，故在M-P神经元模型中，也采用Sigmoid函数来近似， **Sigmoid函数**将较大范围内变化的输入值挤压到 (0,1) 输出值范围内，所以也称为**挤压函数（squashing function）**：
 <div align=center>
-<img src="/img/pics/5.2.png" />
+<img src="/images/ML-pics/5.2.png" />
 </div>
 
 将多个神经元按一定的层次结构连接起来，就得到了神经网络。它是一种**包含多个参数（输入）的模型**，比方说10个神经元两两连接，则有100个参数需要学习（每个神经元有9个连接权以及1个阈值），若将每个神经元都看作一个函数，则整个神经网络就是由这些**函数相互嵌套**而成。
@@ -52,7 +52,7 @@ tags: [ML-notes,ML,notes]
 
 **输入层只是接受外界信号（样本属性）并传递给输出层**（输入层的神经元个数等于样本的属性数目），而**没有激活函数**。
 <div align=center>
-<img src="/img/pics/5.3.png" />
+<img src="/images/ML-pics/5.3.png" />
 </div>
 
 于是，感知机与之前线性模型中的对数几率回归的思想基本是一样的，**都是通过对属性加权与另一个常数求和**，再使用sigmoid函数将这个输出值压缩到0-1之间，从而解决分类问题。
@@ -65,7 +65,7 @@ tags: [ML-notes,ML,notes]
 
 感知机的学习规则非常简单，对于训练样例 （x，y），若当前感知机的输出为 y<sup>~</sup>，则感知机权重这样调整:
 <div align=center>
-<img src="/img/pics/L5.1.png" />
+<img src="/images/ML-pics/L5.1.png" />
 </div>
 
 其中 ŋ ∈（0，1）称为学习率（learning rate）。从上图知道，如果预测正确，即样例的 y 与预测值 y<sup>~</sup>相等，则不会调整权重。
@@ -75,7 +75,7 @@ tags: [ML-notes,ML,notes]
 
 比如下面的非线性可分问题“异或”就无法解决：
 <div align=center>
-<img src="/img/pics/5.4.png" />
+<img src="/images/ML-pics/5.4.png" />
 </div>
 
 > 其实就是一个分类问题，当分类边界呈现非线性时感知机就无法解决了
@@ -89,12 +89,12 @@ tags: [ML-notes,ML,notes]
 - 阈值 θ = w0：
 - 所以可以将输出向量化如下图：
 <div align=center>
-<img src="/img/pics/L5.2.png" />
+<img src="/images/ML-pics/L5.2.png" />
 </div>
 
 然后我们可以知道**点到超平面(Hyperplane)的距离**:
 <div align=center>
-<img src="/img/pics/L5.3.png" />
+<img src="/images/ML-pics/L5.3.png" />
 </div>
 
 > 也就是 输出的值 det(w<sup>T</sup>x) 除以权值的2-范数 ||w||<sup>2</sup>
@@ -105,11 +105,11 @@ tags: [ML-notes,ML,notes]
 
 所以我们将目标选到了**最小化误分类点到分类平面的距离**。得到以下结果：
 <div align=center>
-<img src="/img/pics/L5..4.png" />
+<img src="/images/ML-pics/L5..4.png" />
 </div>
 
 
 而感知机的目标是使误分类点的个数为0，所以提出了新的概念叫函数间隔，以此简化学习过程：
 <div align=center>
-<img src="/img/pics/L5.2.1_1.png"/>
+<img src="/images/ML-pics/L5.2.1_1.png"/>
 </div>

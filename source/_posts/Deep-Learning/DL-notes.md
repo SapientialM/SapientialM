@@ -1,0 +1,15 @@
+---
+title: DL-notes:目录
+date: 2024-05-07 12:36:52
+tags: [DL-notes,DL,notes]
+---
+
+## 目录
+
+
+
+
+
+## 参考
+[李宏毅深度学习教程LeeDL-Tutorial](https://datawhalechina.github.io/leedl-tutorial/#/)
+[邱锡鹏神经网络与深度学习NNDL](https://nndl.github.io/)
