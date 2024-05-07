@@ -2,6 +2,7 @@
 title: ML-notes:目录
 date: 2024-04-12 12:36:52
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 # ML-notes

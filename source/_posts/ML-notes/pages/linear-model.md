@@ -2,6 +2,7 @@
 title: ML-notes:线性模型
 date: 2024-04-15 13:10:52
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 # 3 线性模型

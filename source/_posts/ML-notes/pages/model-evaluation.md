@@ -2,6 +2,7 @@
 title: ML-notes:模型评估与选择
 date: 2024-04-15 08:36:52
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 # 2 模型评估与选择

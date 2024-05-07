@@ -2,6 +2,7 @@
 title: ML-notes:复习
 date: 2024-04-13 12:54:04
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 该页仅为复习资料，内含博客链接均通过搜索得到。

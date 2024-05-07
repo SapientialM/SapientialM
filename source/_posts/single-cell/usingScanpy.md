@@ -3,6 +3,7 @@
 title: 单细胞数据分析
 date: 2024-04-24 16:55:38
 tags: [single-cell,人工智能]
+categories: [数据分析,单细胞]
 ---
 
 # 单细胞数据分析

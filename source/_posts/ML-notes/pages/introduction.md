@@ -2,6 +2,7 @@
 title: ML-notes:绪论
 date: 2024-04-14 13:10:52
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 # 1 绪论

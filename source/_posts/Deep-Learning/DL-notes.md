@@ -2,6 +2,7 @@
 title: DL-notes:目录
 date: 2024-05-07 12:36:52
 tags: [DL-notes,DL,notes]
+categories: [深度学习,笔记]
 ---
 
 ## 目录

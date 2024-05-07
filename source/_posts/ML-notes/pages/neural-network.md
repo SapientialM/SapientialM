@@ -2,6 +2,7 @@
 title: ML-notes:人工神经网络
 date: 2024-04-16 08:09:52
 tags: [ML-notes,ML,notes]
+categories: [机器学习,笔记]
 ---
 
 # 5 人工神经网络
