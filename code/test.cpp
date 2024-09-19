@@ -1,46 +1,30 @@
-#include<algorithm>
-#include<vector>
-#include<iostream>
-#include<string>
-#include<unordered_map>
-
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std;
-
-bool isIsomorphic(string s, string t);
-int main(int argc, char **argv){
-    string s = "aaa";
-    string t = "BBB";
-    cout << isIsomorphic(s, t) << endl;
-};
-
-bool isIsomorphic(string s, string t) {
-    unordered_map<char, char>::iterator iterS;
-    unordered_map<char, char>::iterator iterT;
-    unordered_map<char, char> mapS;
-    unordered_map<char, char> mapT;
-    for(int i = 0; i < s.size(); i ++){
-        iterS = mapS.find(s[i]);
-        cout<<"Finding "<<s[i]<<endl;
-        if(iterS != mapS.end()){
-            cout<<"Find the "<<s[i]<<endl;
-            iterT = mapT.find(t[i]);
-            if(iterT == mapT.end()){
-                return false;
-            }
-            cout<<"Find the "<<t[i]<<endl;
-            if(!(iterS->second == t[i] && iterT->second == s[i])){
-                cout<<"not equal "<<iterT->second<<"!="<<iterS->second<<endl;
-                return false;
-            }
+int singleNumber(vector<int>& nums) {
+    set<int> number_set;
+    set<int>::iterator it;
+    for(int i = 0; i < nums.size(); i ++){
+        if((it = number_set.find(nums[i])) != number_set.end()){
+            cout << "find: " << nums[i] << endl;
+            number_set.erase(it);
         }
         else{
-            iterT = mapT.find(t[i]);
-            if(iterT != mapT.end()){
-                return false;
-            }
-            mapS[s[i]] = t[i];
-            mapT[t[i]] = s[i];
+            cout << "insert: " << nums[i] << endl;
+            number_set.insert(nums[i]);
         }
     }
-    return true;
+    for (auto value : number_set) {
+        cout << "return: " << value << endl;
+        return value;
+    }
+    
+    return 0;
+}
+
+
+int main(int argc, char *argv[]) {
+    vector<int> numbers = {2,2,1};
+    singleNumber(numbers);
 }
