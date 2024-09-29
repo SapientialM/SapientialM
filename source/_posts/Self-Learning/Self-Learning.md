@@ -38,21 +38,23 @@ categories: [自学,笔记]
 
 ## 技术
 
-### **C++：**CS106L: Standard C++ Programming
+### **C++：** CS106L: Standard C++ Programming
 
 {% post_link CS-Class/CS106L 'CS106L 学习记录' %}
 
 
 
-### **操作系统：**CS162: Operating System
+### **操作系统：** CS162: Operating System
 
 
 
-### **分布式计算：**CMU 15-418/Stanford CS149: Parallel Computing
+### **分布式计算： **CMU 15-418/Stanford CS149: Parallel Computing
 
 
 
+### AI System
 
+[课程内容大纲 — AI System (chenzomi12.github.io)](https://chenzomi12.github.io/)
 
 
 
@@ -64,13 +66,9 @@ categories: [自学,笔记]
 
 ### CCF-CSP
 
-目前跟着的是[CCF-CSP认证辅导课](https://www.acwing.com/activity/content/39/)。
-
 {% post_link LeetCode/CCF-CSP 'CCF-CSP 学习记录' %}
 
 ### LeetCode
-
-对于刷题，我没有什么自己的见解，只能说跟着别人的博客来刷。目前跟着刷的是[本站简介 | labuladong 的算法笔记](https://labuladong.online/algo/home/)。
 
 {% post_link LeetCode/LeetCodeBook 'LeetCode刷题' %}
 
@@ -81,6 +79,8 @@ categories: [自学,笔记]
 # 学业
 
 ### 论文
+
+[跟李沐学AI](https://space.bilibili.com/1567748478/channel/collectiondetail?sid=32744)
 
 
 
