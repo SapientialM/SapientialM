@@ -1,46 +1,39 @@
-#include<algorithm>
-#include<vector>
 #include<iostream>
-#include<string>
-#include<unordered_map>
-
 using namespace std;
+const int N = 1e5 + 10;
 
-bool isIsomorphic(string s, string t);
-int main(int argc, char **argv){
-    string s = "aaa";
-    string t = "BBB";
-    cout << isIsomorphic(s, t) << endl;
-};
+int binary_search_left(int q[],int key, int l, int r){
+    if(l==r){if(q[l] == key) return l; return -1;}
+    int mid = (l+r) >> 1;
+    if(q[mid] >= key) return binary_search_left(q, key, l, mid);
+    else return binary_search_left(q, key, mid+1, r);
+}
 
-bool isIsomorphic(string s, string t) {
-    unordered_map<char, char>::iterator iterS;
-    unordered_map<char, char>::iterator iterT;
-    unordered_map<char, char> mapS;
-    unordered_map<char, char> mapT;
-    for(int i = 0; i < s.size(); i ++){
-        iterS = mapS.find(s[i]);
-        cout<<"Finding "<<s[i]<<endl;
-        if(iterS != mapS.end()){
-            cout<<"Find the "<<s[i]<<endl;
-            iterT = mapT.find(t[i]);
-            if(iterT == mapT.end()){
-                return false;
-            }
-            cout<<"Find the "<<t[i]<<endl;
-            if(!(iterS->second == t[i] && iterT->second == s[i])){
-                cout<<"not equal "<<iterT->second<<"!="<<iterS->second<<endl;
-                return false;
-            }
-        }
-        else{
-            iterT = mapT.find(t[i]);
-            if(iterT != mapT.end()){
-                return false;
-            }
-            mapS[s[i]] = t[i];
-            mapT[t[i]] = s[i];
-        }
+int binary_search_right(int q[],int key, int l, int r){
+    if(l == r){if(q[l] == key) return l; return -1;}
+    int mid = (l+r+1) >> 1;
+    if(q[mid] > key) return binary_search_right(q, key, l, mid-1);
+    else return binary_search_right(q, key, mid, r);
+}
+
+
+int main(){
+    int num_1, num_2;
+    cin >> num_1 >> num_2;
+    int arr[num_1];
+    int i = 0;
+    while(i < num_1){
+        cin >> arr[i];
+        i ++;
     }
-    return true;
+    //3 4
+    //5 5
+    //-1 -1
+    int key;
+    while(num_2-->0){
+        cin >> key;
+        cout << binary_search_left(arr, key, 0, num_1-1) << " " << binary_search_right(arr, key, 0, num_1-1) << endl;
+    }
+
+
 }
