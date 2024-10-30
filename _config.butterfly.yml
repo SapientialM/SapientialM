@@ -5,19 +5,19 @@
 nav:
   logo: https://avatars.githubusercontent.com/u/55795402?v=4 # image
   display_title: true
-  fixed: false # fixed navigation bar
+  fixed: true # fixed navigation bar
 
 # Menu 目錄
-  menu:
-    首页: / || fas fa-home
-    时间轴: /archives/ || fas fa-archive
-    标签: /tags/ || fas fa-tags
-    分类: /categories/ || fas fa-folder-open
-    # 清单||fa fa-heartbeat:
-    #   - 子类1: /category1/ || fas fa-music
-    #   - 子类2: /category2/ || fas fa-images
-    #   - 子类3: /category3/ || fas fa-video
-    关于: /about/ || fas fa-heart
+menu:
+  首页: /
+  时间线: /archives/
+  标签: /tags/
+  分类: /categories/
+  # 清单||fa fa-heartbeat:
+  #   - 子类1: /category1/ || fas fa-music
+  #   - 子类2: /category2/ || fas fa-images
+  #   - 子类3: /category3/ || fas fa-video
+  关于: /about/
 
 
 # Code Blocks (代碼相關)
@@ -149,8 +149,8 @@ copy:
 toc:
   post: true
   page: false
-  number: true
-  expand: false
+  number: false
+  expand: true
   style_simple: false # for post
   scroll_percent: true
 
@@ -220,7 +220,7 @@ aside:
   hide: false
   button: true
   mobile: true # display on mobile
-  position: right # left or right
+  position: left # left or right
   display:
     archive: true
     tag: true
@@ -345,15 +345,16 @@ rightside_item_order:
 # (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
 
 # MathJax
-mathjax:
-  enable: false
-  per_page: false
+# mathjax:
+#   enable: true
+#   per_page: false
 
 # KaTeX
 katex:
-  enable: false
+  enable: true
   per_page: false
   hide_scrollbar: true
+
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -367,13 +368,16 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # Preload the search data when the page loads.
   preload: false
   # Show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # Unescape html strings to the readable one.
   unescape: false
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}" # 如果没有查到内容相关内容显示
   CDN:
 
 # Docsearch
@@ -713,7 +717,7 @@ clickShowText:
     # - I
     # - LOVE
     # - YOU
-  fontSize: 15px
+  fontSize: 20px
   random: false
   mobile: false
 
