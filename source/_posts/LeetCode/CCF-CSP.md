@@ -273,5 +273,155 @@ int main(){
 }
 ```
 
+## 高精度
 
+一般情况是 $10^6$ 的大数与一个较小的数进行计算。
+
+我们需要对**C/C++基础数字类型的取值范围**有一个概念。
+| 类型               | 取值范围                                 | 位数 |
+| ------------------ | ---------------------------------------- | ---- |
+| unsigned  int      | 0～4294967295                            | 10位 |
+| int                | 2147483648～2147483647                   | 10位 |
+| unsigned long      | 0～4294967295                            | 10位 |
+| long               | 2147483648～2147483647                   | 10位 |
+| long long          | -9223372036854775808~9223372036854775807 | 19位 |
+| unsigned long long | 0~1844674407370955161                    | 19位 |
+
+存储在数组，逆序存储，方便进位。实际计算是一个模拟计算的过程。
+
+### 加法
+
+1. **使用字符串输入**：
+   - 使用字符串来读取输入，这样可以处理任意长度的数字。
+2. **逐位相加**：
+   - 从个位开始逐位相加，处理每一位的进位。
+3. **处理进位**：
+   - 在每次相加后，计算进位 `carry` 并在下一位加法中使用。
+4. **输出结果**：
+   - 将结果存储在一个向量中，并在最后反向输出以得到正确的顺序。
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm> // 包含 reverse 函数
+
+using namespace std;
+
+int main() {
+    string a, b;
+    cin >> a >> b;
+
+    // 反转字符串以便从个位开始处理
+    reverse(a.begin(), a.end());
+    reverse(b.begin(), b.end());
+
+    vector<int> res;
+    int carry = 0;
+    auto maxSize = max(a.size(), b.size());
+
+    for (std::string::size_type i = 0; i < maxSize; ++i) {
+        int digitA = (i < a.size()) ? a[i] - '0' : 0;
+        int digitB = (i < b.size()) ? b[i] - '0' : 0;
+
+        int sum = digitA + digitB + carry;
+        carry = sum / 10;
+        res.push_back(sum % 10);
+    }
+
+    // 如果最后还有进位
+    if (carry) {
+        res.push_back(carry);
+    }
+
+    // 输出结果（反转回正确的顺序）
+    for (int i = res.size() - 1; i >= 0; --i) {
+        cout << res[i];
+    }
+    cout << endl;
+
+    return 0;
+}
+
+```
+
+### 减法
+
+1. **输入处理**：
+   - **字符串输入**：由于大数可能超出标准整数类型的范围，通常以字符串形式读取输入。
+   - **确保被减数大于减数**：为了简化计算，通常先比较两个数的大小，确保被减数大于或等于减数。如果不是，则交换二者并标记结果为负。
+2. **逐位计算**：
+   - **反转字符串**：为了从低位（个位）开始计算，通常先将字符串反转。
+   - **逐位相减**：从低位到高位逐位相减。如果当前位的被减数小于减数，则需要从更高位借位。
+3. **借位处理**：
+   - **借位调整**：如果当前位不够减，需要从更高的一位借 1，这样当前位加 10。注意借位后，下一位的被减数要减 1。
+   - **处理借位**：确保所有位都正确处理借位，避免出现负数。
+4. **结果处理**：
+   - **去除前导零**：计算完成后，可能会有前导零，需要从结果中去除。
+   - **处理负号**：如果在最初交换了两个数，结果应加上负号。
+5. **输出结果**：
+   - **特殊情况**：如果结果为零，直接输出 `0`。
+   - **输出字符串**：将结果从高位到低位输出，形成最终的结果字符串。
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm> // 包含 reverse 函数
+
+using namespace std;
+
+int main() {
+    string a, b, temp;
+    cin >> a >> b;
+    bool isNeg = false;
+    // 剪枝
+    if(a == b) {cout << 0; return 0;}
+    // 确保 a 是较大的数
+    if (a.size() < b.size() || (a.size() == b.size() && a < b)) {
+        isNeg = true;
+        temp = a;
+        a = b;
+        b = temp;
+    }
+
+    reverse(a.begin(), a.end());
+    reverse(b.begin(), b.end());
+
+    int del = 0, digitA, digitB, dif;
+    vector<unsigned int> res;
+
+    // a > b 
+    for (string::size_type i = 0; i < a.size(); i++) {
+        digitA = a[i] - '0';
+        digitB = i < b.size() ? b[i] - '0' : 0;
+        digitA -= del;
+        del = 0;
+        dif = digitA - digitB;
+        if (dif < 0) {
+            del = 1;
+            dif += 10;
+        }
+        res.push_back(dif);
+    }
+
+    if (isNeg) cout << '-';
+
+    // 需要忽略前导0
+    bool isZero = true;
+    for (int i = res.size() - 1; i >= 0; --i) {
+        if (isZero && res[i] == 0) continue;
+        isZero = false;
+        cout << res[i];
+    }
+
+    // 如果结果是0
+    if (isZero) cout << '0';
+
+    cout << endl;
+
+    return 0;
+}
+
+```
 
