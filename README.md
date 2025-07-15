@@ -1,17 +1,17 @@
-### Welcome to 👋
+### Welcome 👋
 
-<!--
-[my blog](https://SapientialM.github.io) 
-**SapientialM/SapientialM** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<div align="center">
+  
+![info](https://github-readme-stats.vercel.app/api?username=SapientialM&show_icons=true&count_private=true&hide=prs&theme=default_repocard)
 
-Here are some ideas to get you started:
+![Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=SapientialM)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[![SapientialM's GitHub Activity Graph](https://ghchart.rshah.org/SapientialM)](https://github.com/SapientialM)
+
+</div>
+
+<div align="center">
+  
+<img src="https://skillicons.dev/icons?i=java,python,linux,cpp,c,vue" />
+
+</div>
